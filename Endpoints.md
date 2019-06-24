@@ -24,3 +24,41 @@
 Should recevie:
 * username
 * password
+
+Returns: Newly created user / Error.
+
+`POST` /api/auth/login
+
+Should recevie:
+* username
+* password
+
+Returns: Username and token / Error.
+
+## Tickets
+
+`GET` /api/auth/tickets
+
+Returns: Array of created tickets / Error.
+
+`POST` /api/auth/tickets
+
+Should recieve:
+* type
+* description
+* owner
+* date
+* resolved
+
+Returns: Newly created ticket / Error.
+
+`PUT` /api/auth/tickets
+
+Should recieve:
+* type
+* description
+* owner
+* date
+* resolved
+
+Returns: Updated ticket / Error.
