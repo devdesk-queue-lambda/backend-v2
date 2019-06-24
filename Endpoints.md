@@ -19,6 +19,8 @@
 
 ## Login/Authentication
 
-POST /api/auth/register
-Should recevie:
+`POST` /api/auth/register
 
+Should recevie:
+* username
+* password
