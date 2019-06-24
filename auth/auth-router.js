@@ -8,26 +8,32 @@ router.post('/register', (req, res) => {
   const user = req.body;
   const hash = bcrypt.hashSync(user.password, 10);
   user.password = hash;
-  let username = req.body.username
+  user.authType = "user";
+  let username = req.body.username;
 
-  Users.findBy({ username }).then(found => {
-    if (found && found.length > 0) {
-      return res.status(401).json({ message: "Username is already taken" });
-    }
-    else {
-      Users.add(user)
-      .then(saved => {
-        res.status(201).json(saved);
-      })
-      .catch(error => {
-        res.status(500).json(error);
-      });
-    }
-  })
+  if(!username || !req.body.password) {
+    res.status(400).json({ message: "All required fields must be filled" });
+  } else {
+    Users.findBy({ username }).then(found => {
+      if (found && found.length > 0) {
+        return res.status(401).json({ message: "Username is already taken" });
+      }
+      else {
+        Users.add(user)
+        .then(saved => {
+          res.status(201).json(saved);
+        })
+        .catch(error => {
+          res.status(500).json(error);
+        });
+      }
+    })
+  }
 });
 
 router.post('/login', (req, res) => {
   let { username, password } = req.body;
+  console.log(req.body);
 
   Users.findBy({ username })
     .first()

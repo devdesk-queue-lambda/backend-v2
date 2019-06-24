@@ -21,7 +21,6 @@ router.get('/', restricted, (req, res) => {
 });*/
 
 router.post('/', restricted, (req, res) => {
-  console.log(req.body)
   if (!req.body.type || !req.body.description || !req.body.owner) {
     res.status(400).json({message: "All required fields must be filled to create a ticket"})    
   } else {
