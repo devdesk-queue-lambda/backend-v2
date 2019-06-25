@@ -53,4 +53,14 @@ router.put('/:id', restricted, checkAuthType, (req, res) => {
   })
 });
 
+router.delete('/:id', (req, res) => {
+  db.remove(req.params.id)
+  .then(count => {
+    if (count > 0) res.status(204).end()
+    else zoo.status(404).json("Zoo not found")
+  }).catch(err => {
+    res.status(500).json(err)
+  })
+});
+
 module.exports = router;

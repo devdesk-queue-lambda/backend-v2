@@ -8,7 +8,6 @@ router.post('/register', (req, res) => {
   const user = req.body;
   const hash = bcrypt.hashSync(user.password, 10);
   user.password = hash;
-  user.authType = "user";
   let username = req.body.username;
 
   if(!username || !req.body.password) {
