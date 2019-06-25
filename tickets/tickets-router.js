@@ -28,7 +28,7 @@ router.post('/', restricted, (req, res) => {
     .then(ticket => {
         res.status(201).json(ticket)
     }).catch(err => {
-      res.status(500).json(err)
+      res.status(500).json({message: err})
     })
   }
 });
