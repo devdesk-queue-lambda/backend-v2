@@ -16,6 +16,8 @@
 * assigned: integer, points to the helper id assigned to the ticket
 * date: date
 * ressolved: boolean
+* title: string
+* tried: string
 
 ## Login/Authentication
 
@@ -52,7 +54,9 @@ Should recieve:
 * description
 * owner
 * date
-* resolved
+* ressolved
+* title
+* tried
 
 Returns: Success message / Error.
 
