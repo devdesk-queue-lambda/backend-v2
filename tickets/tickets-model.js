@@ -21,12 +21,10 @@ function add(ticket) {
   return db('tickets').insert(ticket);
 }
 
-async function findById(id) {
-  const findId = await db('tickets')
+function findById(id) {
+  return db('tickets')
     .where({ id })
     .first();
-
-    return findId
 }
 
 function update(id, changes) {

@@ -12,13 +12,13 @@ router.get('/', restricted, (req, res) => {
     .catch(err => res.send(err));
 });
 
-/*router.get('/:id', restricted, (req, res) => {
-  Tickets.findById(req.params.id)
+router.get('/:id', restricted, (req, res) => {
+  db.findById(req.params.id)
     .then(ticket => {
       res.json(ticket);
     })
     .catch(err => res.send(err));
-});*/
+});
 
 router.post('/', restricted, (req, res) => {
   if (!req.body.type || !req.body.description || !req.body.owner) {

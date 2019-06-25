@@ -50,7 +50,7 @@ Should recieve:
 * date
 * resolved
 
-Returns: Newly created ticket / Error.
+Returns: Success message / Error.
 
 `PUT` /api/tickets/:id
 
