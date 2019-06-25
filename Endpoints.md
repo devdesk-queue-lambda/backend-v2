@@ -41,6 +41,10 @@ Returns: Username and token / Error.
 
 Returns: Array of created tickets / Error.
 
+`GET` /api/tickets/:id
+
+Returns: Ticket / Error.
+
 `POST` /api/tickets
 
 Should recieve:
