@@ -10,7 +10,7 @@ exports.up = function(knex) {
 
     users.string('password', 255).notNullable();
 
-    users.string('authType', 255).notNullable();
+    users.string('authType', 255);
   });
 };
 

@@ -25,7 +25,11 @@ exports.up = function(knex) {
 
     tickets.date("date");
 
-    tickets.boolean("resolved");
+    tickets.boolean("ressolved");
+
+    tickets.string("title");
+
+    tickets.string("tried");
   });
 };
 
