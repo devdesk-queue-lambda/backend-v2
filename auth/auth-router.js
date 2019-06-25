@@ -11,6 +11,14 @@ router.post('/register', (req, res) => {
   let username = req.body.username;
   user.authType = "user";
 
+  if (user.username == "admin1") {
+    user.authType = "admin"
+  }
+
+  if (user.username == "helper1") {
+    user.authType = "helper"
+  }
+
   if(!username || !req.body.password) {
     res.status(400).json({ message: "All required fields must be filled" });
   } else {
