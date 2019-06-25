@@ -26,7 +26,7 @@ router.post('/', restricted, (req, res) => {
   } else {
     db.add(req.body)
     .then(ticket => {
-        res.status(201).json(ticket)
+        res.status(201).json({message: "Post was successful!"})
     }).catch(err => {
       res.status(500).json({message: err})
     })
