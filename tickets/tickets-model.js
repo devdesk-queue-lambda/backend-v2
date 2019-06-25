@@ -17,10 +17,8 @@ function findBy(filter) {
   return db('tickets').where(filter).first();
 }
 
-async function add(ticket) {
-  const [id] = await db('tickets').insert(ticket);
-
-  return id
+function add(ticket) {
+  return db('tickets').insert(ticket);
 }
 
 async function findById(id) {
