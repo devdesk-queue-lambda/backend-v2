@@ -9,6 +9,7 @@ router.post('/register', (req, res) => {
   const hash = bcrypt.hashSync(user.password, 10);
   user.password = hash;
   let username = req.body.username;
+  user.authType = "user";
 
   if(!username || !req.body.password) {
     res.status(400).json({ message: "All required fields must be filled" });
