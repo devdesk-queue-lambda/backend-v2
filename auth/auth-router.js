@@ -22,7 +22,7 @@ router.post('/register', (req, res) => {
       else {
         Users.add(user)
         .then(saved => {
-          res.status(201).json(saved);
+          res.status(201).json({message: "Success! User registered."});
         })
         .catch(error => {
           res.status(500).json(error);
