@@ -52,7 +52,7 @@ Should recieve:
 
 Returns: Newly created ticket / Error.
 
-`PUT` /api/auth/tickets
+`PUT` /api/auth/tickets/:id
 
 Should recieve:
 * type
@@ -62,3 +62,7 @@ Should recieve:
 * resolved
 
 Returns: Updated ticket / Error.
+
+`DEL` /api/auth/tickets/:id
+
+Returns: Nothing / Error.
