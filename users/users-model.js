@@ -5,6 +5,9 @@ module.exports = {
   find,
   findBy,
   findById,
+  update,
+  remove,
+  getUsernameAndPassword
 };
 
 function find() {
@@ -24,6 +27,25 @@ async function add(user) {
 function findById(id) {
   return db('users')
     .select('id', 'username')
+    .where({ id })
+    .first();
+}
+
+function update(id, changes) {
+  return db("users")
+  .where({ id })
+  .update(changes)
+}
+
+function remove(id) {
+  return db("users")
+  .where({ id })
+  .del()
+}
+
+function getUsernameAndPassword(id) {
+  return db('users')
+    .select('username', "password")
     .where({ id })
     .first();
 }

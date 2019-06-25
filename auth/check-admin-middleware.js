@@ -1,7 +1,7 @@
 module.exports = (req, res, next) => {
   if (
     req.decodedJwt.authType &&
-    (req.decodedJwt.authType == "admin" || req.decodedJwt.authType == "helper")
+    (req.decodedJwt.authType == "admin")
   ) {
     next();
   } else {

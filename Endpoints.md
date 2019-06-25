@@ -37,11 +37,11 @@ Returns: Username and token / Error.
 
 ## Tickets
 
-`GET` /api/auth/tickets
+`GET` /api/tickets
 
 Returns: Array of created tickets / Error.
 
-`POST` /api/auth/tickets
+`POST` /api/tickets
 
 Should recieve:
 * type
@@ -52,7 +52,7 @@ Should recieve:
 
 Returns: Newly created ticket / Error.
 
-`PUT` /api/auth/tickets/:id
+`PUT` /api/tickets/:id
 
 Should recieve:
 * type
@@ -63,6 +63,31 @@ Should recieve:
 
 Returns: Updated ticket / Error.
 
-`DEL` /api/auth/tickets/:id
+`DEL` /api/tickets/:id
+
+Returns: Nothing / Error.
+
+## Users
+
+`GET` /api/users
+
+Returns: Array of users / Error.
+
+`POST` /api/users
+
+Should recieve:
+* username
+* password
+
+Returns: Newly created user / Error.
+
+`PUT` /api/users/:id
+
+Should recieve:
+* new authType of user
+
+Returns: Updated user / Error.
+
+`DEL` /api/users/:id
 
 Returns: Nothing / Error.
