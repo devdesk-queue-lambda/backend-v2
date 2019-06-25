@@ -20,8 +20,7 @@ function findBy(filter) {
 async function add(ticket) {
   const [id] = await db('tickets').insert(ticket);
 
-  const posted = await findById(id)
-  return posted
+  return id
 }
 
 async function findById(id) {
