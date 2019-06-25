@@ -20,13 +20,16 @@ function findBy(filter) {
 async function add(ticket) {
   const [id] = await db('tickets').insert(ticket);
 
-  return findById(id);
+  const posted = await findById(id)
+  return posted
 }
 
-function findById(id) {
-  return db('tickets')
+async function findById(id) {
+  const findId = await db('tickets')
     .where({ id })
     .first();
+
+    return findId
 }
 
 function update(id, changes) {
