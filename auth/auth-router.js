@@ -11,11 +11,11 @@ router.post('/register', (req, res) => {
   let username = req.body.username;
   user.authType = "user";
 
-  if (user.username == "admin1") {
+  if (user.username == "admin") {
     user.authType = "admin"
   }
 
-  if (user.username == "helper1") {
+  if (user.username == "helper") {
     user.authType = "helper"
   }
 
