@@ -33,26 +33,26 @@ router.put('/:id', restricted, checkAdmin, (req, res) => {
   Users.getUsernameAndPassword(req.params.id).then(user => {
     username = user.username;
     password = user.password;
-  })
 
-  const newUser = {
-    username: username,
-    password: password,
-    authType: newAuthType
-  }
-
-  Users.update(id, newUser)
-  .then(count => {
-    if (count > 0) {
-      Users.findById(id)
-      .then(user => {
-        res.status(200).json(user)
-      }) 
-    } else {
-      res.status(404).json("User not found")
+    const newUser = {
+      username: username,
+      password: password,
+      authType: newAuthType
     }
-  }).catch(err => {
-    res.status(500).json(err)
+  
+    Users.update(id, newUser)
+    .then(count => {
+      if (count > 0) {
+        Users.findById(id)
+        .then(user => {
+          res.status(200).json(user)
+        }) 
+      } else {
+        res.status(404).json("User not found")
+      }
+    }).catch(err => {
+      res.status(500).json(err)
+    })
   })
 });
 
