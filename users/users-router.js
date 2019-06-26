@@ -25,7 +25,7 @@ router.get('/:id', restricted, (req, res) => {
 
 router.put('/:id', restricted, checkAdmin, (req, res) => {
 
-  const newAuthType = req.body;
+  const newAuthType = req.body.authType;
   const id = req.params.id;
   let username = null;
   let password = null;
