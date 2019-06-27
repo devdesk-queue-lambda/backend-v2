@@ -23,7 +23,7 @@ exports.up = function(knex) {
       .onDelete("RESTRICT")
       .onUpdate("CASCADE");
 
-    tickets.date("date");
+    tickets.datetime("date");
 
     tickets.boolean("ressolved");
 
